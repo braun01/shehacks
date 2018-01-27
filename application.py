@@ -1,11 +1,9 @@
 from flask import Flask, flash, redirect, render_template, request, session, abort, url_for
 from forms import RegisterForm, LoginForm
+from models import db
 from flask_script import Manager
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
@@ -15,6 +13,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////database/database.sqlite'
 manager = Manager(app)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
+
+def init_db():
+    db.init_app(app)
+    db.app = app
+    db.create_all()
 
 
 @app.route("/")
