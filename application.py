@@ -15,13 +15,14 @@ def main():
     return render_template('index.html')
 
 
-@app.route("/hello")
+@app.route("/createProject")
 def testing():
     names = ['AA', 'BB', 'CC', 'DD', 'EE']
     print(names)
     testing = "AAA"
 
-    return render_template('template.html', names_arr=names)
+    # return render_template('createProject.html', names_arr=names)
+    return render_template('createProject.html')
     # return "hello"
 
 
