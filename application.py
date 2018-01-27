@@ -71,7 +71,7 @@ def register():
     else:
         return render_template('register.html', form=register)
     return render_template('register.html', form=register, email=email, firstname=firstname, lastname=lastname,
-                           name=username, password=password)
+                           username=username, password=password)
 
 
 if __name__ == "__main__":
