@@ -1,4 +1,5 @@
-from flask import Flask, flash, redirect, render_template, request, session, abort
+from flask import Flask, flash, redirect, render_template, request, session, abort, url_for
+from forms import RegisterForm, LoginForm
 from flask_script import Manager
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
@@ -7,23 +8,8 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'dunno'
-
-
-class LoginForm(FlaskForm):
-    name = StringField("Username", validators = [DataRequired()])
-    password = StringField("Password", validators = [DataRequired()])
-    login = SubmitField("Login")
-
-
-class RegisterForm(FlaskForm):
-    email = StringField("Email", validators=[DataRequired()])
-    firstname = StringField("First Name", validators=[DataRequired()])
-    lastname = StringField("Last Name", validators=[DataRequired()])
-    username = StringField("Username", validators=[DataRequired()])
-    password = StringField("Password", validators=[DataRequired()])
-    cpassword = StringField("Confirm Password", validators=[DataRequired()])
-    register = SubmitField("Register")
+app.config['SECRET_KEY'] = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////database/database.sqlite'
 
 
 manager = Manager(app)
