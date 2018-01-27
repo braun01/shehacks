@@ -6,6 +6,8 @@ ompiled source #
 *.exe
 *.o
 *.so
+*.pyc
+__pycache__
 
 # Packages #
 ############
