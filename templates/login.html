@@ -3,10 +3,11 @@
 
 {% block body %}
     <div>
-        {{ wtf.quick_form(form) }}
-        <h4> Your username is: {% if name %}{{ name }}{% else %}{% endif %}</h4>
-        <h4> Your password is: {% if name %}{{ password }}{% else %}{% endif %} </h4>
-
+        <form method="POST" action="/login">
+            {{ wtf.quick_form(form) }}
+            <h4> Your username is: {% if name %}{{ name }}{% else %}{% endif %}</h4>
+            <h4> Your password is: {% if name %}{{ password }}{% else %}{% endif %} </h4>
+        </form>
     </div>
 
 {% endblock %}
