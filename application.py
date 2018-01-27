@@ -4,14 +4,14 @@ from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
-from wtforms.validators import Required
+from wtforms.validators import DataRequired
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'dunno'
 
 class NameForm(FlaskForm):
-    name = StringField("Username", validators = [Required()])
-    password = StringField("Password", validators = [Required()])
+    name = StringField("Username", validators = [DataRequired()])
+    password = StringField("Password", validators = [DataRequired()])
     login = SubmitField("Login")
 
 manager = Manager(app)
