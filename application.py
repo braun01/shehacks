@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return "Welcome"
+    return render_template('layout.html')
 
 
 @app.route("/hello")
@@ -11,7 +11,6 @@ def testing():
     names = ['AA', 'BB', 'CC']
     print(names)
     testing = "AAA"
-
 
     return render_template('template.html', names_arr=names)
     # return "hello"
