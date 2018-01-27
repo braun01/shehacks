@@ -8,7 +8,12 @@ def main():
 
 @app.route("/hello")
 def testing():
-    return render_template('template.html')
+    names = ['AA', 'BB', 'CC']
+    print(names)
+    testing = "AAA"
+
+
+    return render_template('template.html', names_arr=names)
     # return "hello"
 
 if __name__ == "__main__":
