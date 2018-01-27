@@ -38,7 +38,7 @@ def main():
 
 @app.route("/hello")
 def testing():
-    names = ['AA', 'BB', 'CC']
+    names = ['AA', 'BB', 'CC', 'DD', 'EE']
     print(names)
     testing = "AAA"
 
