@@ -27,10 +27,20 @@ h1{
     display: block;
 } */
 
-#ui-datepicker-div {
+/* #ui-datepicker-div {
     position: absolute;
     top: 255px;
     left: 576.266px;
     z-index: 1;
     display: block;
+} */
+
+.day {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: space-around;
+    height: 300px;
+    background: #000;
 }
