@@ -18,8 +18,11 @@ class LoginForm(FlaskForm):
 
 class RegisterForm(FlaskForm):
     email = StringField("Email", validators=[DataRequired()])
-    name = StringField("Username", validators=[DataRequired()])
+    firstname = StringField("First Name", validators=[DataRequired()])
+    lastname = StringField("Last Name", validators=[DataRequired()])
+    username = StringField("Username", validators=[DataRequired()])
     password = StringField("Password", validators=[DataRequired()])
+    cpassword = StringField("Confirm Password", validators=[DataRequired()])
     register = SubmitField("Register")
 
 
@@ -57,13 +60,18 @@ def login():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     email = None
-    name = None
+    firstname = None
+    lastname = None
+    username = None
     password = None
     register = RegisterForm()
-    if register.validate_on_submit():
-        name = register.name.data
+    if register.validate_on_submit() and register.password.data == register.cpassword.data:
+        username = register.username.data
         password = register.password.data
-    return render_template('register.html', form=register, email = email, name=name, password=password)
+    else:
+        return render_template('register.html', form=register)
+    return render_template('register.html', form=register, email=email, firstname=firstname, lastname=lastname,
+                           username=username, password=password)
 
 
 if __name__ == "__main__":

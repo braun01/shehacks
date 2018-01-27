@@ -4,8 +4,8 @@
 {% block body %}
     <div>
         {{ wtf.quick_form(form) }}
-        <h4> Your username is: {% if name %}{{ name }}{% else %}{% endif %}</h4>
-        <h4> Your password is: {% if name %}{{ password }}{% else %}{% endif %} </h4>
+        <h4> Your username is: {% if username %}{{ username }}{% else %}Passwords do not match{% endif %}</h4>
+        <h4> Your password is: {% if username %}{{ password }}{% else %}{% endif %} </h4>
 
     </div>
 
