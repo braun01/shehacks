@@ -35,12 +35,28 @@ h1{
     display: block;
 } */
 
-.day {
+
+
+#week-view.container {
+    padding: 30px;
     display: flex;
-    flex-flow: column;
     justify-content: center;
+    flex-direction: row;
+    /* flex-flow: row; */
     align-items: flex-start;
     align-content: space-around;
-    height: 300px;
-    background: #000;
+    height: 500px;
+    background: #446677;
+}
+
+.day-of-the-week {
+    padding: 30px;
+    display: flex;
+    /* width: 180px; */
+    justify-content: center;
+    flex-direction: column;
+    /* flex-flow: row; */
+    align-items: flex-start;
+    align-content: space-around;
+    border: 1px solid black;
 }
