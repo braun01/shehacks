@@ -23,8 +23,8 @@ def main():
 
 # This should query the database and determine which projects are still current
 # based on current date vs due date
-@app.route("/projects")
-def projects():
+@app.route("/updateProjects")
+def updateProjects():
 
     projects = [{"name": "Essay", \
                 "color": "red", \
@@ -40,16 +40,19 @@ def projects():
                 "work_days": ["Thursday", "Friday"], \
                 "priority": "high",\
                 "completed": False }, \
-                {"name": "reading", \
-                "color": "orange", \
-                "due_date": "02-03-2018 11:59pm", \
-                "est_total_time": 1, \
-                "work_days": ["Saturday"], \
-                "priority": "medium", \
+                {"name": "reading", 
+                "color": "orange", 
+                "due_date": "02-03-2018 11:59pm", 
+                "est_total_time": 1, 
+                "work_days": ["Saturday"], 
+                "priority": "medium", 
                 "completed": False} ] 
 
     print(projects)
     return jsonify(projects)
+
+@app.route("/projects")
+def projects():
     return render_template('projects.html')
 
 
