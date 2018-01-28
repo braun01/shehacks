@@ -26,30 +26,55 @@ def main():
 @app.route("/updateProjects")
 def updateProjects():
 
-    projects = [{"name": "Essay", \
-                "color": "red", \
-                "due_date": "01-30-2018 11:59pm", \
-                "est_total_time": 6, \
-                "work_days": ["Monday", "Wednesday", "Friday"], \
-                "priority": "medium", \
-                "completed": False}, \
-                {"name": "pset", \
-                "color": "blue", \
-                "due_date": "01-28-2018 11:59pm", \
-                "est_total_time": 8, \
-                "work_days": ["Thursday", "Friday"], \
-                "priority": "high",\
-                "completed": False }, \
-                {"name": "reading", 
-                "color": "orange", 
-                "due_date": "02-03-2018 11:59pm", 
-                "est_total_time": 1, 
-                "work_days": ["Saturday"], 
+    # query database for uncompleted projects
+    # create list that looks something like the below
+
+    # example projects list. hardcoded for testing purposes
+    projects = [{"name": "Essay", 
+                "color": "red", 
+                "due_date": "01-30-2018 11:59pm", 
+                "est_total_time": 6, 
+                "work_days": ["Monday", "Wednesday", "Friday"], 
                 "priority": "medium", 
-                "completed": False} ] 
+                "completed": False}, 
+                {"name": "pset", 
+                "color": "blue", 
+                "due_date": "01-28-2018 11:59pm",
+                "est_total_time": 8,
+                "work_days": ["Thursday", "Friday"],
+                "priority": "high",
+                "completed": False }, 
+                {"name": "reading",
+                "color": "orange",
+                "due_date": "02-03-2018 11:59pm",
+                "est_total_time": 1,
+                "work_days": ["Saturday"],
+                "priority": "medium",
+                "completed": False}] 
+
+
+
+    days = {
+        "monday": [],
+        "tuesday": [],
+        "wednesday": [],
+        "thursday": [],
+        "friday": [],
+        "saturday": [],
+        "sunday": []
+    }
+
+
+    for project in projects:
+        work_days = project["work_days"]
+
+        for day in work_days:
+            days[day.lower()].append(project["name"])
+
 
     print(projects)
-    return jsonify(projects)
+    print(days)
+    return jsonify(days)
 
 @app.route("/projects")
 def projects():
