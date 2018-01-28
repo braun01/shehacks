@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy(app)
 
+
 class User(db.Model):
     email = db.Column(db.String(80), primary_key=True, unique=True)
     password = db.Column(db.String(80))
@@ -26,3 +27,16 @@ class User(db.Model):
 
     def get_id(self):
         return str(self.email)
+
+
+class Project(db.Model):
+    projectName = db.Column(db.String(80), primary_key= True)
+    color = db.Column(db.String(80))
+    dueDate = db.Column(db.String(80))
+    estimatedTime = db.Column(db.String(80))
+    workDays = db.Column(db.String(80))
+    priority = db.Column(db.Integer)
+    username = db.Column(db.String(80))
+
+    def completed(self):
+        return True

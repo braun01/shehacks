@@ -15,3 +15,13 @@ class RegisterForm(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired()])
     cpassword = PasswordField("Confirm Password", validators=[DataRequired()])
     register = SubmitField("Register")
+
+class CreateProjectForm(FlaskForm):
+    projectName = StringField("Project Name", validators=[DataRequired()])
+    color = StringField("Color", validators=[DataRequired()])
+    dueDate = StringField("Due Date", validators=[DataRequired()])
+    estimatedTime = StringField("Estimated Length", validators=[DataRequired()])
+    workDays = StringField("What days do you want to work?", validators=[DataRequired()])
+    priority = StringField("Priority from 1-10: ", validators=[DataRequired()])
+    submit = SubmitField("Submit")
+
