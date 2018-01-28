@@ -1,4 +1,4 @@
-# Project Project
+# ProjectProject
 
 ## To get Flask up and running
 First, navigate to the direction containing `application.py`. On a Mac, first run the following: `export FLASK_APP=application.py` and then `export FLASK_DEBUG=1`. 
