@@ -38,5 +38,11 @@ class Project(db.Model):
     priority = db.Column(db.Integer)
     username = db.Column(db.String(80))
 
+    def __init__(self, projectName):
+        self.projectName = projectName
+
+    def __repr__(self):
+        return '<User %r>' % self.projectName
+
     def completed(self):
         return True
