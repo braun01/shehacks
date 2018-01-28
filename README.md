@@ -16,5 +16,8 @@ Pip is required to install these packages
 5. `pip install flask_login`
 6. `pip install flask_sqlalchemy`
 
+## Database
+Make sure you update the path of `app.config['SQLALCHEMY_DATABASE_URI']` to where your computer stores the database.
+
 ## Helpful Links for Flask
 <https://pythonspot.com/flask-web-app-with-python/>
