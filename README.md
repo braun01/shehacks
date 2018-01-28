@@ -9,12 +9,13 @@ From that point, get Flask running using `flask run`. The above steps need to be
 
 ## Installing packages
 Pip is required to install these packages
-1. `pip install flask_script`
-2. `pip install flask_bootstrap`
-3. `pip install flask_moment`
-4. `pip install flask_wtf`
-5. `pip install flask_login`
-6. `pip install flask_sqlalchemy`
+1. `pip install Flask`
+2. `pip install flask_script`
+3. `pip install flask_bootstrap`
+4. `pip install flask_moment`
+5. `pip install flask_wtf`
+6. `pip install flask_login`
+7. `pip install flask_sqlalchemy`
 
 ## Database
 Make sure you update the path of `app.config['SQLALCHEMY_DATABASE_URI']` to where your computer stores the database.
