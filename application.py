@@ -31,7 +31,7 @@ def protected():
 def project():
     project = CreateProjectForm()
     if project.validate_on_submit():
-        if Project.query.filter_by(projectName = CreateProjectForm.projectName.data).first():
+        if Project.query.filter_by(projectname=CreateProjectForm.projectName.data).first():
             return render_template('createProject.html', form=project)
         else:
             newproject = Project(CreateProjectForm.projectName.data, CreateProjectForm.color.data,

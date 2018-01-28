@@ -30,7 +30,7 @@ class User(db.Model):
 
 
 class Project(db.Model):
-    projectName = db.Column(db.String(80), primary_key= True)
+    projectName = db.Column(db.String(80), primary_key= True, unique=True)
     color = db.Column(db.String(80))
     dueDate = db.Column(db.String(80))
     estimatedTime = db.Column(db.String(80))
